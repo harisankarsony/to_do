@@ -195,7 +195,12 @@ body {
 
 .task-list .checkbox,
 .task-list .delete-button {
+    cursor: pointer;
     margin: 0 7px;
+}
+
+.task-list .delete-button {
+    display: none;
 }
 
 .task-list .delete-button {
@@ -238,6 +243,7 @@ body {
 }
 
 .task-footer button {
+    cursor: pointer;
     font-family: 'open sans';
     border: none;
     background: none;
@@ -265,6 +271,7 @@ body {
 .selectall {
     color: rgb(158, 158, 158);
     margin: 0 2.9%;
+    cursor: pointer;
 }
 
 .selectall:hover {
@@ -297,6 +304,14 @@ li:last-child {
 .label {
     margin-left: 5px;
 }
+
+li:hover {
+    .delete-button {
+        display: block;
+    }
+}
+
+
 
 /* TODO
 

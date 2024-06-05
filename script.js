@@ -56,8 +56,12 @@ input.addEventListener('keypress', function (event) {
         else {
             tasks.unshift({ text: input.value, done: 0 });
 
-            let uncompleted = getUnCompletedCount(tasks);
-            showTasks(uncompleted);
+            if(activeButton === 'completed')
+                showCompletedTasks()
+            else if(activeButton === 'active')
+                showActiveTasks();
+            else
+                showAllTasks();
 
             input.value = '';
         }
@@ -75,8 +79,12 @@ taskList.addEventListener('click', (e) => {
     else if (e.target.className === 'checkbox') {
         tasks[index].done === 1 ? tasks[index].done = 0 : tasks[index].done = 1;
     }
-    let uncompleted = getUnCompletedCount(tasks);
-    showTasks(uncompleted);
+    if(activeButton === 'completed')
+        showCompletedTasks()
+    else if(activeButton === 'active')
+        showActiveTasks();
+    else
+        showAllTasks();
 });
 
 // get uncompleted count
@@ -84,12 +92,13 @@ function getUnCompletedCount(tasks) {
     return tasks.filter(item => !item.done).length;
 }
 
+let activeButton = 'all';
 // show completed tasks
 function showCompletedTasks() {
     let uncompleted = getUnCompletedCount(tasks);
     let tempTasks = tasks;
     tasks = tasks.filter(task => task.done > 0);
-    let activeButton = 'completed';
+    activeButton = 'completed';
     showTasks(uncompleted, activeButton);
     tasks = tempTasks;
 }
@@ -99,7 +108,7 @@ function showActiveTasks() {
     let uncompleted = getUnCompletedCount(tasks);
     let tempTasks = tasks;
     tasks = tasks.filter(task => task.done === 0);
-    let activeButton = 'active';
+    activeButton = 'active';
     showTasks(uncompleted, activeButton);
     tasks = tempTasks;
 }
@@ -107,15 +116,19 @@ function showActiveTasks() {
 // show all tasks
 function showAllTasks() {
     let uncompleted = getUnCompletedCount(tasks);
-    let activeButton = 'all';
+    activeButton = 'all';
     showTasks(uncompleted, activeButton);
 }
 
 // delete completed tasks
 function deleteCompletedTasks() {
-    let uncompleted = getUnCompletedCount(tasks);
     tasks = tasks.filter(task => task.done === 0);
-    showTasks(uncompleted);
+    if(activeButton === 'completed')
+        showCompletedTasks()
+    else if(activeButton === 'active')
+        showActiveTasks();
+    else
+        showAllTasks();
 }
 
 
@@ -125,12 +138,26 @@ function deleteCompletedTasks() {
 
 // mark all tasks
 
+let flag = 0;
 function markAllTasks() {
-    for (i of tasks) {
-        i.done = 1;
+    if(flag === 0) {
+        for(i of tasks) {
+            i.done = 1;
+        }
+        flag = 1;
     }
-    let uncompleted = getUnCompletedCount(tasks);
-    showTasks(uncompleted);
+    else {
+        for(i of tasks) {
+            i.done = 0;
+        }
+        flag = 0;
+    }
+    if(activeButton === 'completed')
+        showCompletedTasks()
+    else if(activeButton === 'active')
+        showActiveTasks();
+    else
+        showAllTasks();
 }
 
 // TO DO
