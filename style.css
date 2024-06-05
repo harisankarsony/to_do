@@ -1,0 +1,306 @@
+/* css-reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.897);
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* html */
+
+html {
+    font-family: 'open sans';
+}
+
+/* body */
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(243, 243, 243);
+    font-size: 16pt;
+}
+
+/* main-container */
+
+.main-container {
+    text-align: center;
+}
+
+.main-container h1 {
+    position: relative;
+    color: rgba(182, 0, 0, 0.747);
+    font-size: 50pt;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 600px;
+    font-weight: 500;
+}
+
+.main-container .input {
+    font-size: 18pt;
+    padding: 0.1em 0.3em;
+    border: none;
+    height: 50px;
+    width: 88%;
+}
+
+/* task-container */
+
+.task-container {
+    text-align: left;
+    display: none;
+}
+
+/* task-list */
+
+.task-list li {
+    position: relative;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding: 0.5em;
+    align-content: center;
+    align-items: center;
+}
+
+.task-list .checkbox,
+.task-list .delete-button {
+    margin: 0 7px;
+}
+
+.task-list .delete-button {
+    position: absolute;
+    background: none;
+    right: 0;
+    top: 0;
+    border: none;
+    width: 40px;
+    height: 40px;
+    color: rgb(158, 158, 158);
+    font-size: 20pt;
+}
+
+.task-list .delete-button:hover {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    color: rgba(182, 0, 0, 0.747);
+    font-size: 20pt;
+}
+
+.task-list .checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* task-footer */
+
+.task-footer {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    font-size: 12pt;
+    justify-content: space-around;
+    padding: 1.5% 5%;
+    border-top: 1px solid rgb(211, 211, 211);
+}
+
+.task-footer button {
+    font-family: 'open sans';
+    border: none;
+    background: none;
+    padding: 0.1em 0.2em;
+    font-size: 12pt;
+    font-weight: 400;
+}
+
+.task-footer .clear {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.task-footer .clear:hover {
+    outline: none;
+    padding: 0;
+    border-bottom: 1px solid rgba(182, 0, 0, 0.747);
+}
+
+
+
+/* new code */
+
+.selectall {
+    color: rgb(158, 158, 158);
+    margin: 0 2.9%;
+}
+
+.selectall:hover {
+    color: rgba(182, 0, 0, 0.747);
+}
+
+.little-container {
+    background-color: white;
+    width: 100%;
+    box-shadow: 10px 10px 30px rgb(170, 170, 170);
+}
+
+li:first-child {
+    border-top: 1px solid rgb(211, 211, 211);
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.main-container .input:focus {
+    outline: none;
+    border: 2px solid rgba(182, 0, 0, 0.747);
+}
+
+.span {
+    width: 100%;
+}
+
+.label {
+    margin-left: 5px;
+}
+
+/* TODO
+
+code cleanup
+make responsive
+
+*/
