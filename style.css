@@ -311,7 +311,9 @@ li:hover {
     }
 }
 
-
+::placeholder {
+    font-style: italic;
+}
 
 /* TODO
 
